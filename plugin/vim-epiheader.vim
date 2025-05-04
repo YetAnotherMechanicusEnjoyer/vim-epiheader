@@ -3,7 +3,7 @@
 " Maintainer:	Fahad Assoumani <fahad.assoumani@epitech.eu>
 " License:      This file is placed in the public domain
 
-nnoremap <leader>ah :call <SID>DumpTekHeader()<cr>
+nnoremap <leader>ah :call vim-epiheader#DumpTekHeader()<cr>
 
 function! s:GetHeaderInfo(file_name)
     call inputsave()
@@ -64,7 +64,7 @@ function s:MakeStyleHeader(info_list, year)
     call setpos('.', s:ReturnNewlyPos(current_cursor_pos, 7))
 endfunction
 
-function! s:DumpTekHeader() 
+function! vim-epiheader#DumpTekHeader() 
     let reg_file_ext = '\v^(c|h)(pp)?$'
     let makefile = "Makefile"
     let current_year = strftime("%Y")
